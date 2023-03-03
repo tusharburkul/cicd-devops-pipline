@@ -10,7 +10,7 @@ on:
   workflow_dispatch: null
 jobs:
   build-and-release:
-  runs_on: ubuntu-latest
+    runs_on: ubuntu-latest
     steps:
       - uses: action/checkout@v3
       - name: Run a one-line script
