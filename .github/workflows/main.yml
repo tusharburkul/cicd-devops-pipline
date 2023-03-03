@@ -1,28 +1,19 @@
-# This bascik workflow to help you get started with action
-
+---
 name: CI
-
-# Controls when workflow will run
-on: 
-# Triggers the workflow on push or pull request events but only for the main branch
+on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [main]
-
-# Allow  you to run manually from this action on tab
- workflow_dispatch:
-
-# A workflow run is made of  one or more jobs that sequentaly or parrallel
+    branches:
+      - main
+  workflow_dispatch: null
 jobs:
-# This workflow contain single job called "build"
   build:
     runs_on: ubuntu-latest,ubuntu,centos
     steps:
-    - uses: action/checkout@v3
-    - name: Run a one-line script
-      run: echo Hello,world !
-    - name: Run a multi-line  script
-      run: 
-        echo Add other actions to build,
-        echo test,and deploy your project
+      - uses: action/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello,world !
+      - name: Run a multi-line  script
+        run: echo Add other actions to build, echo test,and deploy your project
